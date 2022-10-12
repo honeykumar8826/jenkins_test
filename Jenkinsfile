@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'linuxnode' }
+    agent any
     
     tools {
         // Install the Maven version configured as "M3" and add it to the path.
@@ -8,23 +8,9 @@ pipeline {
     }
 
     stages {
-        stage("Ennable webhook") {
-            steps {
-                script {
-                    properties([pipelineTriggers([githubPush()])])
-                }
-            }
-        }
-        
         stage('pullscm') {
             steps {
-                git credentialsId: 'github', url: 'git@github.com:sathishbob/jenkins_test.git'
-            }
-        }
-        
-        stage("print") {
-            steps {
-                echo "printing some thing"
+                 git credentialsId: 'GitHub', url: 'git@github.com:honeykumar8826/jenkins_test.git'
             }
         }
         stage('Build') {
