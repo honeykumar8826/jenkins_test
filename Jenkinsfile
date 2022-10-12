@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     tools {
-        // Install the Maven version configured as "M3" and add it to the path.
+        // Install the Maven version configured as "M3" and add it to the  path.
         maven "MVN3"
         jdk "jdk8"
     }
@@ -10,9 +10,10 @@ pipeline {
     stages {
         stage('pullscm') {
             steps {
-                 git credentialsId: 'GitHub', url: 'git@github.com:honeykumar8826/jenkins_test.git'
+                git credentialsId: 'GitHub', url: 'git@github.com:honeykumar8826/jenkins_test.git'
             }
         }
+        
         stage('Build') {
             steps {
                 // Run Maven on a Unix agent.
