@@ -13,6 +13,17 @@ pipeline {
                 git credentialsId: 'Github', url: 'git@github.com:honeykumar8826/jenkins_test.git'
             }
         }
+          stage('print') {
+            steps {
+                sh "echo test"
+            }
+        }
+        
+        stage('print1') {
+            steps {
+                sh "echo test 1"
+            }
+        }
         
         stage('Build') {
             steps {
